@@ -25,4 +25,11 @@ class MainController extends Controller
     {
         return view('comic.create');
     }
+
+    public function store(Request $request)
+    {
+        $data = $request->all();
+
+        dd($data);
+    }
 }

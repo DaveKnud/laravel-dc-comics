@@ -3,27 +3,45 @@
 @section('index.blade')
     <div class="text-center">
         <h1>New Comic</h1>
-        <form>
-            <label for="title"></label>
+        <form method="POST" action="{{ route('comic.store') }}">
+            @csrf
+
+            <label for="title">title</label>
+            <br>
             <input type="text" name="title">
+            <br>
 
-            <label for="description"></label>
+            <label for="description">description</label>
+            <br>
             <input type="text" name="description">
+            <br>
 
-            <label for="thumb"></label>
+            <label for="thumb">thumb</label>
+            <br>
             <input type="text" name="thumb">
+            <br>
 
-            <label for="price"></label>
+            <label for="price">price</label>
+            <br>
             <input type="text" name="price">
+            <br>
 
-            <label for="series"></label>
+            <label for="series">series</label>
+            <br>
             <input type="text" name="series">
+            <br>
 
-            <label for="sale_date"></label>
+            <label for="sale_date">sale_date</label>
+            <br>
             <input type="text" name="sale_date">
+            <br>
 
-            <label for="type"></label>
+            <label for="type">type</label>
+            <br>
             <input type="text" name="type">
+            <br>
+
+            <input class="my-3" type="submit" name="" id="" value="Create">
         </form>
     </div>
 @endsection
