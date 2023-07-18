@@ -3,8 +3,9 @@
 @section('index.blade')
     <div class="text-center">
         <h1>New Comic</h1>
-        <form method="POST" action="{{ route('comic.store') }}">
+        <form method="POST" action="{{ route('comic.update', $comic->id) }}">
             @csrf
+            @method('PUT')
 
             <label for="title">title</label>
             <br>
@@ -41,7 +42,7 @@
             <input type="text" name="type" value="{{ $comic->type }}">
             <br>
 
-            <input class="my-3" type="submit" name="" id="" value="Create">
+            <input class="my-3" type="submit" name="" id="" value="Update">
         </form>
     </div>
 @endsection
