@@ -30,6 +30,16 @@ class MainController extends Controller
     {
         $data = $request->all();
 
-        dd($data);
+        $comic = Comic::create([
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'thumb' => $data['thumb'],
+            'price' => $data['price'],
+            'series' => $data['series'],
+            'sale_date' => $data['sale_date'],
+            'type' => $data['type']
+        ]);
+
+        return redirect()->route("comic.show", $comic->id);
     }
 }
