@@ -9,7 +9,11 @@
         <ul class="list-unstyled text-center">
             @foreach ($comics as $comic)
                 <a href="{{ route('comic.show', $comic->id) }}">
-                    <li>{{ $comic->title }}</li>
+                    <li>{{ $comic->title }}
+                </a>
+
+                <a href="{{ route('comic.edit', $comic->id) }}">
+                    - <i>EDIT</i></li>
                 </a>
             @endforeach
         </ul>

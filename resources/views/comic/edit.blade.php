@@ -8,37 +8,37 @@
 
             <label for="title">title</label>
             <br>
-            <input type="text" name="title">
+            <input type="text" name="title" value="{{ $comic->title }}">
             <br>
 
             <label for="description">description</label>
             <br>
-            <input type="text" name="description">
+            <input type="text" name="description" value="{{ $comic->description }}">
             <br>
 
             <label for="thumb">thumb</label>
             <br>
-            <input type="text" name="thumb">
+            <input type="text" name="thumb" value="{{ $comic->thumb }}">
             <br>
 
             <label for="price">price</label>
             <br>
-            <input type="text" name="price">
+            <input type="text" name="price" value="{{ $comic->price }}">
             <br>
 
             <label for="series">series</label>
             <br>
-            <input type="text" name="series">
+            <input type="text" name="series" value="{{ $comic->series }}">
             <br>
 
             <label for="sale_date">sale_date</label>
             <br>
-            <input type="date" name="sale_date">
+            <input type="date" name="sale_date" value="{{ $comic->sale_date }}">
             <br>
 
             <label for="type">type</label>
             <br>
-            <input type="text" name="type">
+            <input type="text" name="type" value="{{ $comic->type }}">
             <br>
 
             <input class="my-3" type="submit" name="" id="" value="Create">

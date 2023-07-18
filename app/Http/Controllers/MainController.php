@@ -42,4 +42,10 @@ class MainController extends Controller
 
         return redirect()->route("comic.show", $comic->id);
     }
+
+    public function edit($id)
+    {
+        $comic = Comic::findOrFail($id);
+        return view('comic.edit', compact('comic'));
+    }
 }
