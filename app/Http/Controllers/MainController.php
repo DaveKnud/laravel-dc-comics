@@ -29,12 +29,13 @@ class MainController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-
+            'title' => 'required|max:2',
             'description' => 'required|max:255',
+            'thumb' => 'required|max:255',
             'price' => 'required|integer',
             'series' => 'required|max:255',
-            'sale_date' => 'required|unique:posts|max:255',
-            'type' => 'nullable|unique:posts|max:255',
+            'sale_date' => 'required|max:255',
+            'type' => 'nullable|max:255',
         ]);
 
         $comic = Comic::create([
@@ -61,8 +62,9 @@ class MainController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->validate([
-            'title' => 'required|max:255',
+            'title' => 'required|max:2',
             'description' => 'required|max:255',
+            'thumb' => 'required|max:255',
             'price' => 'required|integer',
             'series' => 'required|max:255',
             'sale_date' => 'required|unique:posts|max:255',
