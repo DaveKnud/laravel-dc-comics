@@ -28,7 +28,14 @@ class MainController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $request->validate([
+
+            'description' => 'required|max:255',
+            'price' => 'required|integer',
+            'series' => 'required|max:255',
+            'sale_date' => 'required|unique:posts|max:255',
+            'type' => 'nullable|unique:posts|max:255',
+        ]);
 
         $comic = Comic::create([
             'title' => $data['title'],
@@ -39,6 +46,7 @@ class MainController extends Controller
             'sale_date' => $data['sale_date'],
             'type' => $data['type']
         ]);
+
 
         return redirect()->route("comic.show", $comic->id);
     }
@@ -52,7 +60,15 @@ class MainController extends Controller
 
     public function update(Request $request, $id)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required|max:255',
+            'price' => 'required|integer',
+            'series' => 'required|max:255',
+            'sale_date' => 'required|unique:posts|max:255',
+            'type' => 'nullable|unique:posts|max:255',
+        ]);
+
         $comic = Comic::findOrFail($id);
 
         $comic->update($data);

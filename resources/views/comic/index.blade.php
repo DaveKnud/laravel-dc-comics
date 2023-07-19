@@ -8,22 +8,33 @@
         </a>
         <ul class="list-unstyled text-center">
             @foreach ($comics as $comic)
-                <li>
-                    <a href="{{ route('comic.show', $comic->id) }}">
-                        {{ $comic->title }}
-                    </a>
+                <div class="">
 
-                    <a href="{{ route('comic.edit', $comic->id) }}">
-                        - <i>EDIT</i>
-                    </a>
 
-                    <form method="POST" action="{{ route('comic.delete', $comic->id) }}">
-                        @csrf
-                        @method('DELETE')
-                        <input type="submit" value="DELETE">
-                    </form>
+                    <li class="bg-light my-3">
 
-                </li>
+                        <div class="my-2">
+                            <a class="text-decoration-none text-uppercase text-info "
+                                href="{{ route('comic.show', $comic->id) }}">
+                                COMIC:
+                                {{ $comic->title }}
+                            </a>
+                        </div>
+
+                        <div class="d-flex justify-content-center ">
+                            <a class="btn btn-dark text-decoration-none my-3 " href="{{ route('comic.edit', $comic->id) }}">
+                                <i>Edit</i>
+                            </a>
+
+                            <form method="POST" action="{{ route('comic.delete', $comic->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <input class="btn btn btn-danger my-3" type="submit" value="Remove">
+                            </form>
+                        </div>
+
+                    </li>
+                </div>
             @endforeach
         </ul>
     </div>
