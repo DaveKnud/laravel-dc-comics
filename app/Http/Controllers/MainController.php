@@ -67,8 +67,8 @@ class MainController extends Controller
             'thumb' => 'required|max:255',
             'price' => 'required|integer',
             'series' => 'required|max:255',
-            'sale_date' => 'required|unique:posts|max:255',
-            'type' => 'nullable|unique:posts|max:255',
+            'sale_date' => 'required|max:255',
+            'type' => 'nullable|max:255',
         ]);
 
         $comic = Comic::findOrFail($id);

@@ -8,7 +8,11 @@
 
             <label for="title">title</label>
             <br>
-            <input type="text" name="title">
+            <input id="title" type="text" name="title" class="@error('title') is-invalid @enderror">
+
+            @error('title')
+                <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <br>
 
             <label for="description">description</label>
